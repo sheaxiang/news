@@ -26,14 +26,14 @@
 			<table class="table table-bordered table-hover" style="margin-top: 10px;">
 				<thead>
 				<tr>
-					<th>
+					<th class="text-center">
 						编号
 					</th>
-					<th>
+					<th class="text-center">
 						标题
 					</th>
 					@if(isset($list[0]->reply_number))
-						<th>
+						<th class="text-center">
 							回复数
 						</th>
 					@endif
