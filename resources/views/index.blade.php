@@ -57,9 +57,7 @@
 				@endforeach
 				</tbody>
 			</table>
-			<ul class="pagination">
-				{{ $list->links() }}
-			</ul>
+			{{ $list->links() }}
 		</div>
 	</div>
 </div>
