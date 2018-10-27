@@ -12,7 +12,7 @@ class IndexController extends Controller
 	{
 		$tags = [['name' => '知乎', 'value' => 'zhihu'], ['name' => 'v2ex', 'value' => 'v2ex'], ['name' => 'cnBeta', 'value' => 'cnbeta'], ['name' => '安全客', 'value' => 'anquanke']];
 		dd(Cache::has('tag'));
-		$tag = in_array($request->tag, array_column($tags, 'value')) ? $request->tag : Cache::has('tag') ? Cache::get('tag') : 'zhihu';
+		$tag = in_array($request->tag, array_column($tags, 'value')) ? $request->tag : Cache::get('tag', 'zhihu');
 
 		if($tag == 'cnbeta') {
 			$query = DB::table('cnbeta')->orderBy('inputtime','desc');
