@@ -14,7 +14,7 @@
 	<div class="row clearfix">
 		<div class="col-md-12 column col-lg-12">
 			<h3 class="text-center">
-				News
+				聚合星
 			</h3>
 			<h5 class="text-center text-warning">
 				最后获取时间: {{ $record ->created_at }}
