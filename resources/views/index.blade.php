@@ -40,10 +40,10 @@
 				</tr>
 				</thead>
 				<tbody>
-				@foreach($list as $item)
+				@foreach($list as $k => $item)
 					<tr>
 						<td>
-							{{ $item->id }}
+							{{ $k }}
 						</td>
 						<td>
 							<a href="{{ $item->link }}">{{ $item->title }}</a>
