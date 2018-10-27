@@ -10,6 +10,7 @@ class IndexController extends Controller
 	public function index(Request $request)
 	{
 		$tags = [['name' => '知乎', 'value' => 'zhihu'], ['name' => 'v2ex', 'value' => 'v2ex']];
+		dd(array_column($tags, 'value'));
 		$tag = in_array($request->tag, array_column($tags, 'value')) ? $request->tag : 'zhihu';
 
 		if($tag == 'zhihu') {
