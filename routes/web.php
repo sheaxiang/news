@@ -19,7 +19,7 @@ Route::post('/git/web_hook', function (\Illuminate\Http\Request $request) {
 	$token = 'goodbad12';
 
 
-	dd($request->all());
+	var_dump($request->all());
 	/*$json = json_decode(file_get_contents('php://input'), true);
 
 	if (empty($json['config']['secret']) || $json['config']['secret'] !== $token) {
