@@ -18,7 +18,7 @@ class IndexController extends Controller
 			$query = DB::table($tag);
 		}
 
-		$list = $query->paginate(40);
+		$list = $query->paginate(1);
 		$record = DB::table('record')->first();
 
 		return view('index', compact('tag', 'list', 'tags', 'record'));
