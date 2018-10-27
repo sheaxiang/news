@@ -23,5 +23,5 @@ Route::post('/git/web_hook', function (\Illuminate\Http\Request $request) {
 	if (empty($json['config']['secret']) || $json['config']['secret'] !== $token) {
 		return response()->json('error request',400);
 	}*/
-	dd(shell_exec("cd $target ;git pull 2>&1"));
+	var_dump(shell_exec("cd $target ;git pull 2>&1"));
 });
