@@ -11,7 +11,7 @@ class IndexController extends Controller
 	{
 		$tags = [['name' => '知乎', 'value' => 'zhihu'], ['name' => 'v2ex', 'value' => 'v2ex']];
 		$tag = in_array($request->tag, array_column($tags, 'value')) ? $request->tag : 'zhihu';
-		dd($tag);
+		dd($request->tag);
 		if($tag == 'zhihu') {
 			$list = DB::table('zhihu')->get();
 		} elseif($tag == 'v2ex') {
