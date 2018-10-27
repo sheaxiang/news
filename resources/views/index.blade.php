@@ -57,7 +57,7 @@
 				@endforeach
 				</tbody>
 			</table>
-			<div class="pull-right">
+			<div class="pull-center">
 				{{ $list->appends(['tag' => $tag])->links() }}
 			</div>
 		</div>
