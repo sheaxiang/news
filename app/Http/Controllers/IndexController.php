@@ -10,7 +10,7 @@ class IndexController extends Controller
 {
 	public function index(Request $request)
 	{
-		$tags = [['name' => '知乎', 'value' => 'zhihu'], ['name' => 'v2ex', 'value' => 'v2ex'], ['name' => 'cnBeta', 'value' => 'cnbeta'], ['name' => '安全客', 'value' => 'anquanke']];
+		$tags = [['name' => '知乎', 'value' => 'zhihu'], ['name' => 'v2ex', 'value' => 'v2ex'], ['name' => '微博', 'value' => 'weibo'], ['name' => 'cnBeta', 'value' => 'cnbeta'], ['name' => '安全客', 'value' => 'anquanke']];
 
 		$tag = in_array($request->tag, array_column($tags, 'value')) ? $request->tag : Cache::get('tag', 'zhihu');
 
@@ -20,7 +20,7 @@ class IndexController extends Controller
 			$query = DB::table($tag);
 		}
 
-		$list = $query->paginate(40);
+		$list = $query->paginate(50);
 
 		$record = DB::table('record')->first();
 
