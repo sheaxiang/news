@@ -56,10 +56,11 @@
 					</tr>
 				@endforeach
 				</tbody>
-				<ul class="pagination">
-					{{ $list->links() }}
-				</ul>
+
 			</table>
+			<ul class="pagination">
+				{{ $list->links() }}
+			</ul>
 		</div>
 	</div>
 </div>
