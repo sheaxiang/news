@@ -56,7 +56,6 @@
 					</tr>
 				@endforeach
 				</tbody>
-
 			</table>
 			<ul class="pagination">
 				{{ $list->links() }}
