@@ -37,20 +37,31 @@
 							回复数
 						</th>
 					@endif
+
+					@if(isset($list[0]->red_number))
+						<th class="text-center">
+							热度
+						</th>
+					@endif
 				</tr>
 				</thead>
 				<tbody>
 				@foreach($list as $k => $item)
 					<tr>
-						<td>
+						<td class="text-center">
 							{{ $k + 1 }}
 						</td>
-						<td>
+						<td class="text-center">
 							<a href="{{ $item->link }}">{{ $item->title }}</a>
 						</td>
 						@if(isset($list[0]->reply_number))
-							<td>
+							<td class="text-center">
 								{{ $item->reply_number }}
+							</td>
+						@endif
+						@if(isset($list[0]->red_number))
+							<td class="text-center">
+								{{ $item->red_number }}
 							</td>
 						@endif
 					</tr>
