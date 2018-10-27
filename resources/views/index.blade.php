@@ -43,7 +43,7 @@
 				@foreach($list as $k => $item)
 					<tr>
 						<td>
-							{{ $k }}
+							{{ $k + 1 }}
 						</td>
 						<td>
 							<a href="{{ $item->link }}">{{ $item->title }}</a>
@@ -57,6 +57,7 @@
 				@endforeach
 				</tbody>
 			</table>
+			{{ $list->link() }}
 		</div>
 	</div>
 </div>

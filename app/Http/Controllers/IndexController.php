@@ -13,11 +13,12 @@ class IndexController extends Controller
 		$tag = in_array($request->tag, array_column($tags, 'value')) ? $request->tag : 'zhihu';
 
 		if($tag == 'cnbeta') {
-			$list = DB::table('cnbeta')->orderBy('inputtime','desc')->get();
+			$query = DB::table('cnbeta')->orderBy('inputtime','desc');
 		} else {
-			$list = DB::table($tag)->get();
+			$query = DB::table($tag);
 		}
 
+		$list = $query->paginate(40);
 		$record = DB::table('record')->first();
 
 		return view('index', compact('tag', 'list', 'tags', 'record'));
