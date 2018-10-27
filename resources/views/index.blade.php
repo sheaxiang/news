@@ -56,8 +56,9 @@
 					</tr>
 				@endforeach
 				</tbody>
+				{{ $list->link() }}
 			</table>
-			{{ $list->link() }}
+
 		</div>
 	</div>
 </div>
