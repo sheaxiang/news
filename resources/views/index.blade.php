@@ -60,7 +60,7 @@
 							</td>
 						@endif
 						@if(isset($list[0]->read_number))
-							<td class="text-center">
+							<td class="text-center text-danger">
 								{{ $item->read_number }}
 							</td>
 						@endif
