@@ -17,7 +17,7 @@
 				News
 			</h3>
 			<h5 class="text-center text-warning">
-				最后获取时间1: {{ $list[0]->created_at }}
+				最后获取时间: {{ $list[0]->created_at }}
 			</h5>
 			@foreach($tags as $v)
 				<button type="button" class="btn btn-link btn-small @if($tag == $v['value']) active @endif"><a href="/?tag={{ $v['value'] }}" @if($tag == $v['value'])  class="text-muted" @else style="color: black" @endif>{{ $v['name'] }}</a> </button>
