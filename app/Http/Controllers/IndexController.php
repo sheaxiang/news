@@ -10,13 +10,14 @@ class IndexController extends Controller
 {
 	public function index(Request $request)
 	{
-		$tag = in_array($request->tag, ['zhihu', 'v2ex']) ? $request->tag : 'zhihu';
+		$tags = [['name' => '知乎', 'value' => 'zhihu'], ['name' => 'v2ex', 'value' => 'v2ex']];
+		$tag = in_array($request->tag, $tags) ? $request->tag : 'zhihu';
 
 		if($tag == 'zhihu') {
 			$list = DB::table('zhihu')->get();
 		} elseif($tag == 'v2ex') {
 			$list = DB::table('v2ex')->get();
 		}
-		return view('index', compact('tag', 'list'));
+		return view('index', compact('tag', 'list', 'tags'));
     }
 }

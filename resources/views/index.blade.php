@@ -19,8 +19,9 @@
 			<h5 class="text-center text-warning">
 				最后获取时间: {{ $list[0]->created_at }}
 			</h5>
-			<button type="button" class="btn btn-link btn-small @if($tag == 'zhihu') active @endif"><a href="/?tag=zhihu" @if($tag == 'zhihu')  class="text-muted" @endif>知乎</a> </button>
-			<button type="button" class="btn btn-link btn-small @if($tag == 'v2ex') active @endif"><a href="/?tag=v2ex" @if($tag != 'v2ex')  style="color: black" @endif>V2ex</a></button>
+			@foreach($tags as $v)
+				<button type="button" class="btn btn-link btn-small @if($tag == $v['value']) active @endif"><a href="/?tag={{ $v['value'] }}" @if($tag == $v['value'])  class="text-muted" @else style="color: black" @endif>{{ $v['name'] }}</a> </button>
+			@endforeach
 			<br/>
 			<table class="table table-bordered table-hover" style="margin-top: 10px;">
 				<thead>
