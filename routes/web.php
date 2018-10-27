@@ -17,7 +17,7 @@ Route::any('/git/web_hook', function (\Illuminate\Http\Request $request) {
 	$target = '/www/wwwroot/news.webooc.com'; // 生产环境web目录
 
 	$token = 'goodbad12';
-
+	dd($request->all());
 	/*$json = json_decode(file_get_contents('php://input'), true);
 
 	if (empty($json['config']['secret']) || $json['config']['secret'] !== $token) {
