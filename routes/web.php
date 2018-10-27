@@ -15,7 +15,6 @@ Route::get('/', 'IndexController@index');
 
 Route::post('/git/web_hook', function (\Illuminate\Http\Request $request) {
 	$target = '/www/wwwroot/news.webooc.com'; // 生产环境web目录
-
 	$token = 'goodbad12';
 
 	var_dump($request->all());
