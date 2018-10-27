@@ -38,7 +38,7 @@
 						</th>
 					@endif
 
-					@if(isset($list[0]->red_number))
+					@if(isset($list[0]->read_number))
 						<th class="text-center">
 							热度
 						</th>
@@ -59,9 +59,9 @@
 								{{ $item->reply_number }}
 							</td>
 						@endif
-						@if(isset($list[0]->red_number))
+						@if(isset($list[0]->read_number))
 							<td class="text-center">
-								{{ $item->red_number }}
+								{{ $item->read_number }}
 							</td>
 						@endif
 					</tr>
