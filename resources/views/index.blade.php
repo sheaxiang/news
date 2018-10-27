@@ -57,7 +57,7 @@
 				@endforeach
 				</tbody>
 			</table>
-			{{ $list->links() }}
+			{{ $list->append(['tag' => $tag])->links() }}
 		</div>
 	</div>
 </div>
