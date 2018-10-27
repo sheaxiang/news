@@ -24,4 +24,5 @@ Route::post('/git/web_hook', function (\Illuminate\Http\Request $request) {
 		return response()->json('error request',400);
 	}*/
 	var_dump(shell_exec("cd $target ;git pull 2>&1"));
+	exit;
 });
