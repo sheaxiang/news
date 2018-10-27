@@ -9,13 +9,17 @@ class IndexController extends Controller
 {
 	public function index(Request $request)
 	{
-		$tags = [['name' => '知乎', 'value' => 'zhihu'], ['name' => 'v2ex', 'value' => 'v2ex']];
+		$tags = [['name' => '知乎', 'value' => 'zhihu'], ['name' => 'v2ex', 'value' => 'v2ex'], ['name' => 'cnBeta', 'value' => 'cnbeta'], ['name' => '安全客', 'value' => 'anquanke']];
 		$tag = in_array($request->tag, array_column($tags, 'value')) ? $request->tag : 'zhihu';
-		if($tag == 'zhihu') {
-			$list = DB::table('zhihu')->get();
-		} elseif($tag == 'v2ex') {
-			$list = DB::table('v2ex')->get();
+
+		if($tag == 'cnbeta') {
+			$list = DB::table('cnbeta')->orderBy('inputtime','desc')->get();
+		} else {
+			$list = DB::table($tag)->get();
 		}
-		return view('index', compact('tag', 'list', 'tags'));
+
+		$record = DB::table('record')->first();
+
+		return view('index', compact('tag', 'list', 'tags', 'record'));
     }
 }

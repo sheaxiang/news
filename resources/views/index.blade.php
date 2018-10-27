@@ -17,7 +17,7 @@
 				News
 			</h3>
 			<h5 class="text-center text-warning">
-				最后获取时间: {{ $list[0]->created_at }}
+				最后获取时间: {{ $record ->created_at }}
 			</h5>
 			@foreach($tags as $v)
 				<button type="button" class="btn btn-link btn-small @if($tag == $v['value']) active @endif"><a href="/?tag={{ $v['value'] }}" @if($tag == $v['value'])  class="text-muted" @else style="color: black" @endif>{{ $v['name'] }}</a> </button>
@@ -32,9 +32,11 @@
 					<th>
 						标题
 					</th>
-					<th>
-						回复数
-					</th>
+					@if(isset($list[0]->reply_number))
+						<th>
+							回复数
+						</th>
+					@endif
 				</tr>
 				</thead>
 				<tbody>
@@ -46,9 +48,11 @@
 						<td>
 							<a href="{{ $item->link }}">{{ $item->title }}</a>
 						</td>
-						<td>
-							{{ $item->reply_number }}
-						</td>
+						@if(isset($list[0]->reply_number))
+							<td>
+								{{ $item->reply_number }}
+							</td>
+						@endif
 					</tr>
 				@endforeach
 				</tbody>
