@@ -18,6 +18,7 @@ class ComposerStaticInit78d0950645af974878cd764a87c4c9f9
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '0d8253363903f0ac7b0978dcde4e28a0' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/helpers.php',
+        '037df9e1dcb3b4e4199c5c023f28c2f6' => __DIR__ . '/..' . '/sheaxiang/laravel-function-helper/src/Support/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -55,6 +56,7 @@ class ComposerStaticInit78d0950645af974878cd764a87c4c9f9
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'SheaXiang\\LaravelFunctionHelper\\' => 32,
         ),
         'R' => 
         array (
@@ -206,6 +208,10 @@ class ComposerStaticInit78d0950645af974878cd764a87c4c9f9
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'SheaXiang\\LaravelFunctionHelper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sheaxiang/laravel-function-helper/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -348,6 +354,7 @@ class ComposerStaticInit78d0950645af974878cd764a87c4c9f9
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/IndexController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -3092,6 +3099,7 @@ class ComposerStaticInit78d0950645af974878cd764a87c4c9f9
         'SebastianBergmann\\Timer\\RuntimeException' => __DIR__ . '/..' . '/phpunit/php-timer/src/RuntimeException.php',
         'SebastianBergmann\\Timer\\Timer' => __DIR__ . '/..' . '/phpunit/php-timer/src/Timer.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'SheaXiang\\LaravelFunctionHelper\\HelperServiceProvider' => __DIR__ . '/..' . '/sheaxiang/laravel-function-helper/src/HelperServiceProvider.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
         'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => __DIR__ . '/..' . '/symfony/console/CommandLoader/ContainerCommandLoader.php',
