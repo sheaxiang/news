@@ -69,7 +69,7 @@
 				</tbody>
 			</table>
 			<div class="text-center">
-				{{ $list->appends(['tag' => $tag])->links() }}
+				{{ $list->appends(['tag' => $tag])->links('vendor.pagination.default') }}
 			</div>
 		</div>
 	</div>

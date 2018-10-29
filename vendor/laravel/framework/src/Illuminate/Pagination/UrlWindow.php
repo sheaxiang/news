@@ -44,7 +44,7 @@ class UrlWindow
     {
         $onEachSide = $this->paginator->onEachSide;
 
-        if ($this->paginator->lastPage() < ($onEachSide * 2) + 3) {
+        if ($this->paginator->lastPage() < ($onEachSide * 2) + 6) {
             return $this->getSmallSlider();
         }
 
