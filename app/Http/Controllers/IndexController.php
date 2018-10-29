@@ -25,7 +25,7 @@ class IndexController extends Controller
 
 		Cache::forever('tag', $tag);
 
-		$record = DB::table('record')->where('title', $tag)->orderBy('crated_at', 'desc')->first();
+		$record = DB::table('record')->where('title', $tag)->orderBy('created_at', 'desc')->first();
 
 		return view('index', compact('tag', 'list', 'tags', 'record'));
     }
