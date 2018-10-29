@@ -52,7 +52,7 @@
 							{{ $k + 1 }}
 						</td>
 						<td class="text-center">
-							<a href="{{ is_mobile() && $tag == 'cnbeta' ? $item->phone_link : $item->link }}">{{ $item->title }}</a>
+							@if(isset($item->category)) [{{$item->category}}] @endif<a href="{{ is_mobile() && $tag == 'cnbeta' ? $item->phone_link : $item->link }}">{{ $item->title }}</a>
 						</td>
 						@if(isset($list[0]->reply_number))
 							<td class="text-center">
