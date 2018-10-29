@@ -52,7 +52,7 @@
 							{{ $k + 1 }}
 						</td>
 						<td class="text-center">
-							@if(isset($item->category)) <span class="text-muted">[{{$item->category}}]</span> @endif<a href="{{ is_mobile() && $tag == 'cnbeta' ? $item->phone_link : $item->link }}">{!! $item->title !!}</a>
+							@if(isset($item->category)) <span class="text-danger">[{{$item->category}}]</span> @endif<a href="{{ is_mobile() && $tag == 'cnbeta' ? $item->phone_link : $item->link }}">{!! $item->title !!}</a>
 						</td>
 						@if(isset($list[0]->reply_number))
 							<td class="text-center">
