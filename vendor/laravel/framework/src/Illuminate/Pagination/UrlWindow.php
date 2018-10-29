@@ -74,8 +74,9 @@ class UrlWindow
      */
     protected function getUrlSlider($onEachSide)
     {
-        $window = $onEachSide * 2;
-
+        //$window = $onEachSide * 2;
+		$window = $onEachSide;
+		
         if (! $this->hasPages()) {
             return ['first' => null, 'slider' => null, 'last' => null];
         }
