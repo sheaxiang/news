@@ -174,7 +174,7 @@ class UrlWindow
      */
     public function getStart()
     {
-        return $this->paginator->getUrlRange(1, 2);
+        return $this->paginator->getUrlRange(1, null);
     }
 
     /**
