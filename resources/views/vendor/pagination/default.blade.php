@@ -10,9 +10,6 @@
                 <a href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')">&lsaquo;</a>
             </li>
         @endif
-        @php
-            var_dump($elements);
-        @endphp
         {{-- Pagination Elements --}}
         @foreach ($elements as $k => $element)
             {{-- "Three Dots" Separator --}}
