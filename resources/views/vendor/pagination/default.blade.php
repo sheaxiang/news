@@ -11,10 +11,10 @@
             </li>
         @endif
         @php
-            dd($elements);
+            var_dump($elements);
         @endphp
         {{-- Pagination Elements --}}
-        @foreach ($elements as $element)
+        @foreach ($elements as $k => $element)
             {{-- "Three Dots" Separator --}}
             @if (is_string($element))
                 <li class="disabled" aria-disabled="true"><span>{{ $element }}</span></li>
