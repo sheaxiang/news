@@ -23,9 +23,9 @@ class IndexController extends Controller
 
 		$list = $query->paginate(50);
 
-		$record = DB::table('record')->first();
-
 		Cache::forever('tag', $tag);
+
+		$record = DB::table('record')->where('title', $tag)->orderBy('crated_at', 'desc')->first();
 
 		return view('index', compact('tag', 'list', 'tags', 'record'));
     }
