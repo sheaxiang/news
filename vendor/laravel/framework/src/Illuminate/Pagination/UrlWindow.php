@@ -110,7 +110,7 @@ class UrlWindow
     protected function getSliderTooCloseToBeginning($window)
     {
         return [
-            'first' => $this->paginator->getUrlRange(1, $window + 2),
+            'first' => $this->paginator->getUrlRange(1, $window),
             'slider' => null,
             'last' => $this->getFinish(),
         ];
@@ -125,7 +125,7 @@ class UrlWindow
     protected function getSliderTooCloseToEnding($window)
     {
         $last = $this->paginator->getUrlRange(
-            $this->lastPage() - ($window + 2),
+            $this->lastPage() - ($window),
             $this->lastPage()
         );
 
