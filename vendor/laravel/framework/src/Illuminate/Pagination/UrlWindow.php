@@ -144,8 +144,6 @@ class UrlWindow
      */
     protected function getFullSlider($onEachSide)
     {
-    	var_dump($this->getStart());
-		var_dump($this->getFinish());
         return [
             'first'  => $this->getStart(),
             'slider' => $this->getAdjacentUrlRange($onEachSide),
@@ -174,7 +172,7 @@ class UrlWindow
      */
     public function getStart()
     {
-        return $this->paginator->getUrlRange(1, null);
+        return $this->paginator->getUrlRange(1, 2);
     }
 
     /**
