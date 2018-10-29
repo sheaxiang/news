@@ -43,7 +43,7 @@ class UrlWindow
     public function get()
     {
         $onEachSide = $this->paginator->onEachSide;
-
+		dd($onEachSide);
         if ($this->paginator->lastPage() < ($onEachSide * 2) + 6) {
             return $this->getSmallSlider();
         }
@@ -108,7 +108,7 @@ class UrlWindow
     protected function getSliderTooCloseToBeginning($window)
     {
         return [
-            'first' => $this->paginator->getUrlRange(1, $window + 4),
+            'first' => $this->paginator->getUrlRange(1, $window + 2),
             'slider' => null,
             'last' => $this->getFinish(),
         ];
@@ -123,7 +123,7 @@ class UrlWindow
     protected function getSliderTooCloseToEnding($window)
     {
         $last = $this->paginator->getUrlRange(
-            $this->lastPage() - ($window + 4),
+            $this->lastPage() - ($window + 2),
             $this->lastPage()
         );
 
