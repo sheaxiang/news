@@ -10,14 +10,15 @@ class IndexController extends Controller
 {
 	public function index(Request $request)
 	{
-		$tags = [['name' => '知乎', 'value' => 'zhihu'], ['name' => 'v2ex', 'value' => 'v2ex'], ['name' => '微博', 'value' => 'weibo'], ['name' => 'cnBeta', 'value' => 'cnbeta'], ['name' => '安全客', 'value' => 'anquanke']];
+		$tags = [['name' => '知乎', 'value' => 'zhihu'], ['name' => 'v2ex', 'value' => 'v2ex'], ['name' => '微博', 'value' => 'weibo'], ['name' => 'cnBeta', 'value' => 'cnbeta'], ['name' => '网易新闻', 'value' => 'wy163'], ['name' => '腾讯新闻', 'value' => 'tengxun'], ['name' => '安全客', 'value' => 'anquanke']];
 
 		$tag = in_array($request->tag, array_column($tags, 'value')) ? $request->tag : Cache::get('tag', 'zhihu');
 
+		$query = DB::table($tag);
 		if($tag == 'cnbeta') {
-			$query = DB::table('cnbeta')->orderBy('inputtime','desc');
-		} else {
-			$query = DB::table($tag);
+			$query = $query->orderBy('inputtime','desc');
+		} elseif ($tag == 'wy163' || $tag == 'tengxun') {
+			$query->orderBy('update_time','desc');
 		}
 
 		$list = $query->paginate(50);
