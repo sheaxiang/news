@@ -29,4 +29,9 @@ class IndexController extends Controller
 
 		return view('index', compact('tag', 'list', 'tags', 'record'));
     }
+
+	public function tags()
+	{
+		return succeed([['name' => '知乎', 'value' => 'zhihu'], ['name' => 'v2ex', 'value' => 'v2ex'], ['name' => '微博', 'value' => 'weibo'], ['name' => '网易新闻', 'value' => 'wy163'], ['name' => '腾讯新闻', 'value' => 'tengxun'], ['name' => 'cnBeta', 'value' => 'cnbeta'], ['name' => '安全客', 'value' => 'anquanke']]);
+    }
 }
