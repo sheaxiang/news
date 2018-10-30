@@ -32,6 +32,26 @@ class IndexController extends Controller
 
 	public function tags()
 	{
-		return succeed([['name' => '知乎', 'value' => 'zhihu'], ['name' => 'v2ex', 'value' => 'v2ex'], ['name' => '微博', 'value' => 'weibo'], ['name' => '网易新闻', 'value' => 'wy163'], ['name' => '腾讯新闻', 'value' => 'tengxun'], ['name' => 'cnBeta', 'value' => 'cnbeta'], ['name' => '安全客', 'value' => 'anquanke']]);
+		return [['name' => '知乎', 'value' => 'zhihu'], ['name' => 'v2ex', 'value' => 'v2ex'], ['name' => '微博', 'value' => 'weibo'], ['name' => '网易新闻', 'value' => 'wy163'], ['name' => '腾讯新闻', 'value' => 'tengxun'], ['name' => 'cnBeta', 'value' => 'cnbeta'], ['name' => '安全客', 'value' => 'anquanke']];
+    }
+
+	public function list(Request $request)
+	{
+		$tags = $this->tags();
+
+		$tag = in_array($request->tag, array_column($tags, 'value')) ? $request->tag : 'zhihu';
+
+		$query = DB::table($tag);
+		if($tag == 'cnbeta') {
+			$query = $query->orderBy('inputtime','desc');
+		} elseif ($tag == 'wy163' || $tag == 'tengxun') {
+			$query->orderBy('update_time','desc');
+		}
+
+		$list = $query->paginate(50);
+
+		$record = DB::table('record')->where('title', $tag)->orderBy('created_at', 'desc')->first();
+
+		return succeed(['list' => $list, 'record' => $record]);
     }
 }

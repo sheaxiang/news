@@ -18,3 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/tags', 'IndexController@tags');
+
+Route::get('/list', 'IndexController@list');
