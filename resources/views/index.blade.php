@@ -10,7 +10,7 @@
 	</style>
 </head>
 <body>
-<div class="container" style="filter: grayscale(1);">
+<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column col-lg-12">
 			<h3 class="text-center">
@@ -23,7 +23,7 @@
 				<button type="button" class="btn btn-link btn-small @if($tag == $v['value']) active @endif"><a href="/?tag={{ $v['value'] }}" @if($tag == $v['value'])  class="text-muted" @else style="color: black" @endif>{{ $v['name'] }}</a> </button>
 			@endforeach
 			<br/>
-			<table class="table table-bordered table-hover" style="margin-top: 10px;">
+			<table class="table table-bordered table-hover" style="margin-top: 10px;font-size: 14px">
 				<thead>
 				<tr>
 					<th class="text-center">
