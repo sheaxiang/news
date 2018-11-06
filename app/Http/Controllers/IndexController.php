@@ -12,7 +12,7 @@ class IndexController extends Controller
 	{
 		$tags = [['name' => '知乎', 'value' => 'zhihu'], ['name' => 'v2ex', 'value' => 'v2ex'], ['name' => '微博', 'value' => 'weibo'], ['name' => '网易新闻', 'value' => 'wy163'], ['name' => '腾讯新闻', 'value' => 'tengxun'], ['name' => 'cnBeta', 'value' => 'cnbeta'], ['name' => '安全客', 'value' => 'anquanke']];
 
-		$tag = in_array($request->tag, array_column($tags, 'value')) ? $request->tag : Cache::get('tag', 'zhihu');
+		$tag = in_array($request->tag, array_column($tags, 'value')) ? $request->tag : session('tag', 'zhihu');
 
 		$query = DB::table($tag);
 		if($tag == 'cnbeta') {
@@ -23,7 +23,7 @@ class IndexController extends Controller
 
 		$list = $query->paginate(50);
 
-		Cache::forever('tag', $tag);
+		session(['tag'=>$tag]);
 
 		$record = DB::table('record')->where('title', $tag)->orderBy('created_at', 'desc')->first();
 
