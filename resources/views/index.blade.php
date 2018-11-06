@@ -12,7 +12,7 @@
 <body>
 <div class="container">
 	<div class="row clearfix">
-		<div class="col-md-8 column col-lg-12">
+		<div class="col-md-12 column col-lg-12">
 			<h3 class="text-center">
 				聚合星
 			</h3>
