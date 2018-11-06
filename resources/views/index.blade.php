@@ -10,7 +10,7 @@
 	</style>
 </head>
 <body>
-<div class="container">
+<div class="container" style="transform: scale(0.6);">
 	<div class="row clearfix">
 		<div class="col-md-12 column col-lg-12">
 			<h3 class="text-center">
